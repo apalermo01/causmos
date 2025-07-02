@@ -95,7 +95,7 @@ echo -e "${COLOR}Granting user $USER_EMAIL access to the app through IAP...${NC}
 gcloud iap web add-iam-policy-binding --resource-type=app-engine --member="user:$USER_EMAIL" --role='roles/iap.httpsResourceAccessor'
 
 echo -e "${COLOR}Creating Firestore database...${NC}"
-gcloud firestore databases create --location=eur3
+gcloud firestore databases create --location=eur3 --type=firestore-native
 
 echo -e "${COLOR}Granting service account access...${NC}"
 gcloud projects add-iam-policy-binding $PROJECT_ID \
